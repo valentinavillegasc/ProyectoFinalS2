@@ -69,6 +69,21 @@ public class ControllerMain implements ActionListener{
 		vPrincipal.getPanelGestionEntrenadores().getBtnAgregar().addActionListener(this);
 		vPrincipal.getPanelGestionEquipos().getBtnAgregar().addActionListener(this);
 		vPrincipal.getPanelGestionTorneos().getBtnAgregar().addActionListener(this);
+		vPrincipal.getPanelFormula1().getBtnCarreraPasada().addActionListener(this);
+		
+		vPrincipal.getPanelFormula1().getBtnJuego().addActionListener(this);
+		vPrincipal.getPanelFormula1().getBtnJugadores().addActionListener(this);
+		vPrincipal.getPanelFormula1().getBtnEquipos().addActionListener(this);
+		
+		vPrincipal.getPanelEquiposFormula1().getBtnJuego().addActionListener(this);
+		vPrincipal.getPanelEquiposFormula1().getBtnJugadores().addActionListener(this);
+		vPrincipal.getPanelEquiposFormula1().getBtnEquipos().addActionListener(this);
+		
+		vPrincipal.getPanelJugadoresFormula1().getBtnJuego().addActionListener(this);
+		vPrincipal.getPanelJugadoresFormula1().getBtnJugadores().addActionListener(this);
+		vPrincipal.getPanelJugadoresFormula1().getBtnEquipos().addActionListener(this);
+
+
 
 
 
@@ -88,8 +103,22 @@ public class ControllerMain implements ActionListener{
 			juegoActual = "PanelRocket";
 			break;
 		case "btnFormula1":
-			
+			vPrincipal.mostrarPanel("PanelFormula1");
+			juegoActual = "PanelFormula1";
 			break;
+		case "CarreraPasada":
+		    vPrincipal.mostrarPanel("PanelResultadosFormula1");
+		    break;
+		case "JuegoF1":
+		    vPrincipal.mostrarPanel("PanelFormula1");
+		    break;
+		case "JugadoresF1":
+		    vPrincipal.mostrarPanel("PanelJugadoresFormula1");
+		    break;
+		case "EquiposF1":
+		    vPrincipal.mostrarPanel("PanelEquiposFormula1");
+		    break;
+
 		case "btnGTWS":
 			break;
 		case "btnFIFA":
