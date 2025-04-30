@@ -7,102 +7,96 @@ import java.awt.*;
 public class PanelLogin extends JPanel {
 
     private PanelConFondo panelLogo;
-    private JButton btnLogin;
-    private JButton btnAgregarEquipo;
-    private JButton btnEliminarEquipo;
-    private JButton btnDefinirTorneo;
-    private JButton btnConfigurarPartida;
-    private JLabel lblTituloAdmin;
+    private JButton btnLoginHeader;
+    private JPanel panelCentral;
+    private JTextField txtUsuario;
+    private JPasswordField txtContrasena;
+    private JButton btnLoginForm;
 
     public PanelLogin() {
         setLayout(new BorderLayout());
-        inicializarComponentes();
-        setBorder(new TitledBorder("Panel de Administración"));
+        setBorder(new TitledBorder("Panel de Inicio de Sesión"));
         setBackground(Color.WHITE);
+        inicializarComponentes();
     }
 
     private void inicializarComponentes() {
-
-        // --- Header con logo y login ---
+        // --- Panel superior: Logo + botón login ---
         panelLogo = new PanelConFondo("/imagenes/logoESport.png");
         panelLogo.setPreferredSize(new Dimension(900, 120));
         panelLogo.setLayout(new BorderLayout());
 
-        btnLogin = new JButton("Login");
-        btnLogin.setFocusPainted(false);
-        btnLogin.setBackground(Color.LIGHT_GRAY);
+        btnLoginHeader = new JButton("Login");
+        btnLoginHeader.setFocusPainted(false);
+        btnLoginHeader.setBackground(Color.LIGHT_GRAY);
 
-        JPanel panelLogin = new JPanel(new BorderLayout());
-        panelLogin.setOpaque(false);
-        panelLogin.add(btnLogin, BorderLayout.EAST);
+        JPanel panelLoginHeader = new JPanel(new BorderLayout());
+        panelLoginHeader.setOpaque(false);
+        panelLoginHeader.add(btnLoginHeader, BorderLayout.EAST);
 
-        panelLogo.add(panelLogin, BorderLayout.NORTH);
+        panelLogo.add(panelLoginHeader, BorderLayout.NORTH);
+        add(panelLogo, BorderLayout.NORTH);
 
-        // --- Centro de administración ---
-        JPanel panelCentral = new JPanel();
+        // --- Panel central: título + formulario ---
+        panelCentral = new JPanel();
         panelCentral.setLayout(new BoxLayout(panelCentral, BoxLayout.Y_AXIS));
         panelCentral.setBackground(Color.WHITE);
 
-        lblTituloAdmin = new JLabel("Panel de Administración", SwingConstants.CENTER);
-        lblTituloAdmin.setFont(new Font("Arial", Font.BOLD, 22));
-        lblTituloAdmin.setAlignmentX(Component.CENTER_ALIGNMENT);
+        JLabel lblTituloLogin = new JLabel("Login", SwingConstants.CENTER);
+        lblTituloLogin.setFont(new Font("Arial", Font.BOLD, 16));
+        lblTituloLogin.setOpaque(true);
+        lblTituloLogin.setBackground(new Color(220, 220, 220));
+        lblTituloLogin.setMaximumSize(new Dimension(300, 30));
+        lblTituloLogin.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         panelCentral.add(Box.createVerticalStrut(20));
-        panelCentral.add(lblTituloAdmin);
+        panelCentral.add(lblTituloLogin);
         panelCentral.add(Box.createVerticalStrut(30));
 
-        // --- Botones de acciones ---
-        btnAgregarEquipo = new JButton("Agregar Equipo");
-        btnAgregarEquipo.setActionCommand("Agregar");
-        btnEliminarEquipo = new JButton("Eliminar Equipo");
-        btnDefinirTorneo = new JButton("Definir Torneo Actual");
-        btnConfigurarPartida = new JButton("Configurar Partida (Quién vs Quién)");
+        // --- Formulario de login ---
+        JPanel panelFormulario = new JPanel();
+        panelFormulario.setLayout(new BoxLayout(panelFormulario, BoxLayout.Y_AXIS));
+        panelFormulario.setBackground(new Color(230, 230, 230));
+        panelFormulario.setMaximumSize(new Dimension(400, 200));
+        panelFormulario.setAlignmentX(Component.CENTER_ALIGNMENT);
+        panelFormulario.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
-        personalizarBoton(btnAgregarEquipo);
-        personalizarBoton(btnEliminarEquipo);
-        personalizarBoton(btnDefinirTorneo);
-        personalizarBoton(btnConfigurarPartida);
+        JLabel lblUsuario = new JLabel("Usuario:");
+        lblUsuario.setFont(new Font("Arial", Font.BOLD, 14));
+        txtUsuario = new JTextField();
+        txtUsuario.setMaximumSize(new Dimension(Integer.MAX_VALUE, 30));
 
-        panelCentral.add(btnAgregarEquipo);
-        panelCentral.add(Box.createVerticalStrut(15));
-        panelCentral.add(btnEliminarEquipo);
-        panelCentral.add(Box.createVerticalStrut(15));
-        panelCentral.add(btnDefinirTorneo);
-        panelCentral.add(Box.createVerticalStrut(15));
-        panelCentral.add(btnConfigurarPartida);
+        JLabel lblContrasena = new JLabel("Contraseña:");
+        lblContrasena.setFont(new Font("Arial", Font.BOLD, 14));
+        txtContrasena = new JPasswordField();
+        txtContrasena.setMaximumSize(new Dimension(Integer.MAX_VALUE, 30));
 
-        // --- Agregar al principal ---
-        add(panelLogo, BorderLayout.NORTH);
+        btnLoginForm = new JButton("Login");
+        btnLoginForm.setActionCommand("MenuAdmin");
+        btnLoginForm.setFocusPainted(false);
+        btnLoginForm.setBackground(Color.LIGHT_GRAY);
+        btnLoginForm.setMaximumSize(new Dimension(100, 30));
+        btnLoginForm.setAlignmentX(Component.RIGHT_ALIGNMENT);
+
+        panelFormulario.add(lblUsuario);
+        panelFormulario.add(Box.createVerticalStrut(5));
+        panelFormulario.add(txtUsuario);
+        panelFormulario.add(Box.createVerticalStrut(15));
+        panelFormulario.add(lblContrasena);
+        panelFormulario.add(Box.createVerticalStrut(5));
+        panelFormulario.add(txtContrasena);
+        panelFormulario.add(Box.createVerticalStrut(20));
+        panelFormulario.add(btnLoginForm);
+
+        panelCentral.add(panelFormulario);
+        panelCentral.add(Box.createVerticalStrut(30));
+
         add(panelCentral, BorderLayout.CENTER);
     }
 
-    private void personalizarBoton(JButton boton) {
-        boton.setAlignmentX(Component.CENTER_ALIGNMENT);
-        boton.setMaximumSize(new Dimension(300, 40));
-        boton.setFocusPainted(false);
-        boton.setBackground(new Color(70, 130, 180));
-        boton.setForeground(Color.WHITE);
-        boton.setFont(new Font("Arial", Font.BOLD, 14));
-    }
-
     // --- Getters para controladores ---
-    public JButton getBtnLogin() {
-        return btnLogin;
-    }
-
-    public JButton getBtnAgregarEquipo() {
-        return btnAgregarEquipo;
-    }
-
-    public JButton getBtnEliminarEquipo() {
-        return btnEliminarEquipo;
-    }
-
-    public JButton getBtnDefinirTorneo() {
-        return btnDefinirTorneo;
-    }
-
-    public JButton getBtnConfigurarPartida() {
-        return btnConfigurarPartida;
-    }
+    public JButton getBtnLoginForm() { return btnLoginForm; }
+    public JButton getBtnLoginHeader() { return btnLoginHeader; }
+    public JTextField getTxtUsuario() { return txtUsuario; }
+    public JPasswordField getTxtContrasena() { return txtContrasena; }
 }
