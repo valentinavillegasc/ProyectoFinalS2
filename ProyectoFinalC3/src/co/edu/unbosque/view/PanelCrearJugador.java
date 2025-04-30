@@ -52,7 +52,7 @@ public class PanelCrearJugador extends JPanel {
         panelFormulario.add(txtNombre);
 
         panelFormulario.add(new JLabel("Juego:"));
-        comboJuego = new JComboBox<>(new String[]{"Seleccionar...", "FIFA", "LoL", "Valorant"});
+        comboJuego = new JComboBox<>(new String[]{"Seleccionar...", "FIFA", "Formula 1", "Gran turismo", "Rocket League"});
         panelFormulario.add(comboJuego);
 
         panelFormulario.add(new JLabel("Equipo:"));

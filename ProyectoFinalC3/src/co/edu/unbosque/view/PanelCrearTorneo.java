@@ -53,7 +53,7 @@ public class PanelCrearTorneo extends JPanel {
         panelFormulario.setBackground(Color.WHITE);
 
         txtNombre = new JTextField();
-        comboJuego = new JComboBox<>(new String[]{"Seleccionar...", "FIFA", "LoL", "Valorant"});
+        comboJuego = new JComboBox<>(new String[]{"Seleccionar...", "FIFA", "Formula 1", "Gran turismo", "Rocket League"});
         comboTipoTorneo = new JComboBox<>(new String[]{"Seleccionar...", "Eliminación", "Liga", "Grupos"});
         txtFecha = new JTextField();
         comboEquipoA = new JComboBox<>(new String[]{"Seleccionar...", "Equipo 1", "Equipo 2"});

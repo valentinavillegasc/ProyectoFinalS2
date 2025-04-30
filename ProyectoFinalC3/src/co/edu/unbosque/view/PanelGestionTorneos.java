@@ -44,7 +44,7 @@ public class PanelGestionTorneos extends JPanel {
         panelFiltros.setBackground(Color.WHITE);
 
         panelFiltros.add(new JLabel("Juego:"));
-        comboJuego = new JComboBox<>(new String[]{"Todos", "FIFA", "LoL", "Valorant"});
+        comboJuego = new JComboBox<>(new String[]{"Todos","FIFA", "Formula 1", "Gran turismo", "Rocket League"});
         panelFiltros.add(comboJuego);
 
         panelFiltros.add(new JLabel("Fecha:"));
