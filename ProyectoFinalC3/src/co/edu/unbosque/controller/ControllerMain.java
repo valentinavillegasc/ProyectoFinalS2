@@ -59,7 +59,21 @@ public class ControllerMain implements ActionListener{
 		vPrincipal.getPanelJugadores().getBtnJugadores().addActionListener(this);
 		vPrincipal.getPanelJugadores().getBtnEquipos().addActionListener(this);
 		
-		//vPrincipal.getPanelLogin().getBtnAgregarEquipo().addActionListener(this);
+		vPrincipal.getPanelLogin().getBtnLoginForm().addActionListener(this);
+		vPrincipal.getPanelMenuAdmin().getBtnEntrenadores().addActionListener(this);
+		vPrincipal.getPanelMenuAdmin().getBtnJugadores().addActionListener(this);
+		vPrincipal.getPanelMenuAdmin().getBtnTorneo().addActionListener(this);
+		vPrincipal.getPanelMenuAdmin().getBtnEquipos().addActionListener(this);
+		
+		vPrincipal.getPanelGestionJugadores().getBtnAgregar().addActionListener(this);
+		vPrincipal.getPanelGestionEntrenadores().getBtnAgregar().addActionListener(this);
+		vPrincipal.getPanelGestionEquipos().getBtnAgregar().addActionListener(this);
+		vPrincipal.getPanelGestionTorneos().getBtnAgregar().addActionListener(this);
+
+
+
+		
+		
 	}
 
 
@@ -85,6 +99,39 @@ public class ControllerMain implements ActionListener{
 			vPrincipal.mostrarPanel("PanelLogin");
 			entrenadorDAO = new EntrenadorDAO();
 			break;
+		case "MenuAdmin":
+			vPrincipal.mostrarPanel("PanelMenuAdmin");
+			break;
+		case "Equipos":
+		    vPrincipal.mostrarPanel("PanelGestionEquipos");
+		    break;
+
+		case "Torneos":
+		    vPrincipal.mostrarPanel("PanelGestionTorneos");
+		    break;
+			
+		case "Entrenadores":
+		    vPrincipal.mostrarPanel("PanelGestionEntrenadores");
+		    break;
+		case "Jugadores":
+		    vPrincipal.mostrarPanel("PanelGestionJugadores");
+		    break;
+		case "AgregarJugador":
+		    vPrincipal.mostrarPanel("PanelCrearJugador");
+		    break;
+
+		case "AgregarEntrenador":
+		    vPrincipal.mostrarPanel("PanelCrearEntrenador");
+		    break;
+
+		case "AgregarEquipo":
+		    vPrincipal.mostrarPanel("PanelCrearEquipo");
+		    break;
+
+		case "AgregarTorneo":
+		    vPrincipal.mostrarPanel("PanelCrearTorneo");
+		    break;
+
 		case "Juego":
 			vPrincipal.mostrarPanel(juegoActual);
 			break;

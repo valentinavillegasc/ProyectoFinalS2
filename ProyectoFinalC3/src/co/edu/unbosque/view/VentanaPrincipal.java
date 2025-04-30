@@ -12,6 +12,15 @@ public class VentanaPrincipal extends JFrame {
     private PanelJugadores panelJugadores;
     private PanelRocket panelRocket;
     private PanelLogin panelLogin;
+    private PanelMenuAdmin panelMenuAdmin;
+    private PanelGestionEntrenadores panelGestionEntrenadores;
+    private PanelGestionJugadores panelGestionJugadores;
+    private PanelCrearEntrenador panelCrearEntrenador;
+    private PanelCrearEquipo panelCrearEquipo;
+    private PanelCrearTorneo panelCrearTorneo;
+    private PanelGestionTorneos panelGestionTorneos;
+    private PanelGestionEquipos panelGestionEquipos;
+    private PanelCrearJugador panelCrearJugador;
 
     public VentanaPrincipal() {
         setTitle("NeoLeague Arena");
@@ -35,6 +44,17 @@ public class VentanaPrincipal extends JFrame {
         panelJugadores = new PanelJugadores();
         panelRocket = new PanelRocket();
         panelLogin = new PanelLogin(); 
+        panelMenuAdmin = new PanelMenuAdmin();
+        panelGestionEntrenadores = new PanelGestionEntrenadores();
+        panelGestionJugadores = new PanelGestionJugadores();
+        panelGestionTorneos = new PanelGestionTorneos();
+        panelGestionEquipos = new PanelGestionEquipos();
+        panelCrearJugador = new PanelCrearJugador();
+        panelCrearEntrenador = new PanelCrearEntrenador();
+        panelCrearEquipo = new PanelCrearEquipo();
+        panelCrearTorneo = new PanelCrearTorneo();
+        
+
 
         // --- Agregar los paneles al contenedor ---
         contenedor.add(panelJuegos, "PanelJuegos");
@@ -42,13 +62,22 @@ public class VentanaPrincipal extends JFrame {
         contenedor.add(panelJugadores, "PanelJugadores");
         contenedor.add(panelRocket, "PanelRocket");
         contenedor.add(panelLogin, "PanelLogin");
+        contenedor.add(panelMenuAdmin, "PanelMenuAdmin");
+        contenedor.add(panelGestionEntrenadores,"PanelGestionEntrenadores");
+        contenedor.add(panelGestionJugadores,"PanelGestionJugadores");
+        contenedor.add(panelGestionTorneos,"PanelGestionTorneos");
+        contenedor.add(panelGestionEquipos,"PanelGestionEquipos");
 
-
+        contenedor.add(panelCrearJugador, "PanelCrearJugador");
+        contenedor.add(panelCrearEntrenador, "PanelCrearEntrenador");
+        contenedor.add(panelCrearEquipo, "PanelCrearEquipo");
+        contenedor.add(panelCrearTorneo, "PanelCrearTorneo");
+        
         // --- Agregar contenedor a la ventana ---
         add(contenedor);
 
         // --- Mostrar inicialmente el panel de juegos ---
-        cardLayout.show(contenedor, "PanelJuegos");
+        cardLayout.show(contenedor, "PanelLogin");
 
     }
 
@@ -83,7 +112,77 @@ public class VentanaPrincipal extends JFrame {
     	return contenedor;
     }
 
-    public JPanel getPanelLogin() {
-    	return panelLogin;
+    public PanelLogin getPanelLogin() {
+        return panelLogin;
     }
+
+	public PanelMenuAdmin getPanelMenuAdmin() {
+		return panelMenuAdmin;
+	}
+
+	public PanelCrearEntrenador getPanelCrearEntrenador() {
+		return panelCrearEntrenador;
+	}
+
+	public void setPanelCrearEntrenador(PanelCrearEntrenador panelCrearEntrenador) {
+		this.panelCrearEntrenador = panelCrearEntrenador;
+	}
+
+	public PanelCrearEquipo getPanelCrearEquipo() {
+		return panelCrearEquipo;
+	}
+
+	public void setPanelCrearEquipo(PanelCrearEquipo panelCrearEquipo) {
+		this.panelCrearEquipo = panelCrearEquipo;
+	}
+
+	public PanelCrearTorneo getPanelCrearTorneo() {
+		return panelCrearTorneo;
+	}
+
+	public void setPanelCrearTorneo(PanelCrearTorneo panelCrearTorneo) {
+		this.panelCrearTorneo = panelCrearTorneo;
+	}
+
+	public PanelCrearJugador getPanelCrearJugador() {
+		return panelCrearJugador;
+	}
+
+	public void setPanelCrearJugador(PanelCrearJugador panelCrearJugador) {
+		this.panelCrearJugador = panelCrearJugador;
+	}
+
+	public PanelGestionEntrenadores getPanelGestionEntrenadores() {
+		return panelGestionEntrenadores;
+	}
+
+	public void setPanelGestionEntrenadores(PanelGestionEntrenadores panelGestionEntrenadores) {
+		this.panelGestionEntrenadores = panelGestionEntrenadores;
+	}
+
+	public PanelGestionJugadores getPanelGestionJugadores() {
+		return panelGestionJugadores;
+	}
+
+	public void setPanelGestionJugadores(PanelGestionJugadores panelGestionJugadores) {
+		this.panelGestionJugadores = panelGestionJugadores;
+	}
+
+	public PanelGestionTorneos getPanelGestionTorneos() {
+		return panelGestionTorneos;
+	}
+
+	public void setPanelGestionTorneos(PanelGestionTorneos panelGestionTorneos) {
+		this.panelGestionTorneos = panelGestionTorneos;
+	}
+
+	public PanelGestionEquipos getPanelGestionEquipos() {
+		return panelGestionEquipos;
+	}
+
+	public void setPanelGestionEquipos(PanelGestionEquipos panelGestionEquipos) {
+		this.panelGestionEquipos = panelGestionEquipos;
+	}
+    
+    
 }
